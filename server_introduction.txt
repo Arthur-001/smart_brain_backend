@@ -1,0 +1,15 @@
+we want to make a server. At first, we have to test our server with postman. Here this is our initial plan:
+
+0- "/"  respond with = "this is working"
+1- "/signin"                --> POST = success/fail 
+2- "/register"              --> POST = user
+3- "/profile/:userId"       --> GET = user // to get our users based on their ID
+4- "/image"                 --> PUT = user //* this will the number of times that a user submited the a URL
+
+
+Note for number 1: signin should a POST request. because any time we want to send a password we don't want to send it as a query string because it is visible in the URL tab bar and brings on security issues. POST sends it inside of the body, ideallay over HTTPS so that it's hidden from man-in-the-middle attacks and it's secure.
+
+//! Security for storing passwords
+1- we don't use GET for storing our password. Instead we always should use POST request.
+2- we want to send it over 'https' which requires a certificate
+3- store passwords in hash
